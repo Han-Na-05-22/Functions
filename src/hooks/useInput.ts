@@ -11,10 +11,6 @@ const useInputs = <T extends initValueType>(initValue: T) => {
 				| React.ChangeEvent<HTMLInputElement>
 				| React.ChangeEvent<HTMLTextAreaElement>,
 		) => {
-			if (!e.target.value) {
-				return;
-			}
-
 			if (typeof initValue === 'string' || typeof initValue === 'number') {
 				setInputValue(e.target.value as T);
 			}
