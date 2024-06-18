@@ -4,7 +4,7 @@ import * as S from './style';
 import { useEffect } from 'react';
 
 const Loading = () => {
-	const { isLoading, showLoading, hiddenLoading } = useLoading();
+	const { isLoading, hiddenLoading } = useLoading();
 
 	useEffect(() => {
 		if (isLoading) {

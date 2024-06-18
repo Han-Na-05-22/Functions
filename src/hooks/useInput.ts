@@ -5,8 +5,6 @@ type initValueType = string | number | boolean | object | any[];
 const useInputs = <T extends initValueType>(initValue: T) => {
 	const [inputValue, setInputValue] = useState<T>(initValue);
 
-	console.log('inputValue', inputValue);
-
 	const onChangeInputValue = useCallback(
 		(
 			e:
@@ -36,7 +34,7 @@ const useInputs = <T extends initValueType>(initValue: T) => {
 				setInputValue((prev: T) => [...(prev as any[]), e.target.value] as T);
 			}
 		},
-		[],
+		[initValue],
 	);
 
 	const onChangeSelect = useCallback(

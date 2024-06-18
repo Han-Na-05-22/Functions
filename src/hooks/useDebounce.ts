@@ -3,7 +3,9 @@ import { useLoading } from 'store/common/state';
 
 const useDebounce = <T>(value: T, delay?: number) => {
 	const [debouncedValue, setDebouncedValue] = useState<T>(value);
-	const { isLoading, showLoading, hiddenLoading } = useLoading();
+	const { showLoading, hiddenLoading } = useLoading();
+
+	console.log('debouncedValue', debouncedValue);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
