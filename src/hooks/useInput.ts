@@ -1,3 +1,4 @@
+import { RadioListProps } from 'components/common/RadioButton/interface';
 import { useCallback, useState } from 'react';
 
 type initValueType = string | number | boolean | object | any[];
@@ -47,11 +48,47 @@ const useInputs = <T extends initValueType>(initValue: T) => {
 		[],
 	);
 
+	const onChangeRadioButton = useCallback(
+		(e: React.ChangeEvent<HTMLInputElement>, radioName: string) => {
+			if (
+				typeof initValue === 'object' &&
+				Array.isArray((inputValue as { [key: string]: any })[radioName])
+			) {
+				const { name } = e.target;
+
+				const changeRadioValue = (
+					(inputValue as { [key: string]: any })[radioName] as any[]
+				).map((radio: RadioListProps) => {
+					if (radio.name === name) {
+						return {
+							...radio,
+							checked: true,
+						};
+					}
+					return {
+						...radio,
+						checked: false,
+					};
+				});
+
+				setInputValue(
+					(prev: T) =>
+						({
+							...(prev as object),
+							[radioName]: changeRadioValue,
+						}) as T,
+				);
+			}
+		},
+		[initValue, inputValue],
+	);
+
 	return {
 		inputValue,
 		setInputValue,
 		onChangeInputValue,
 		onChangeSelect,
+		onChangeRadioButton,
 	};
 };
 
