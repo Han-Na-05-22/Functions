@@ -11,7 +11,7 @@ const SelectBox = ({
 }: SelectBoxProps) => {
 	return (
 		<S.SelectBoxContainer className={className}>
-			{label !== null && (
+			{label && (
 				<div className="label-container">
 					<span className="label-text">{label}</span>
 				</div>

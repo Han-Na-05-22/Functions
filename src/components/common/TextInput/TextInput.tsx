@@ -15,7 +15,7 @@ const TextInput = ({
 }: TextInputProps) => {
 	return (
 		<S.TextInputContainer className={className}>
-			{label !== null && (
+			{label && (
 				<div className="label-container">
 					{isRequired && <b className="required">*</b>}
 					<label className="label-text" htmlFor={name}>
