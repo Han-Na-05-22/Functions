@@ -2,8 +2,6 @@ import { styled } from 'styled-components';
 
 export const ToggleContainer = styled.div`
 	display: inline-block;
-	margin-bottom: 20px;
-	margin-left: 20px;
 
 	.toggle-content {
 		display: flex;

@@ -2,7 +2,6 @@ import styled, { css } from 'styled-components';
 import { TooltipStyleProps } from './interface';
 
 export const TooltipContainer = styled.div<TooltipStyleProps>`
-	border: 1px solid red;
 	position: relative;
 	display: inline-block;
 	width: ${(props) => props.width};

@@ -5,7 +5,6 @@ export const TabsContainer = styled.div`
 	gap: 0px 8px;
 	align-items: center;
 	border-bottom: 1px solid #ccc;
-	margin: 20px 0px;
 
 	.tab-content {
 		padding-bottom: 4px;
