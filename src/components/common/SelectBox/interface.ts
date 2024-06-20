@@ -5,6 +5,6 @@ export interface SelectBoxProps {
 	OptionArray: any[];
 	label?: string;
 	name: string;
-	value: string;
+	value: string | number;
 	onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }

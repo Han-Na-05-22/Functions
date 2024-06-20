@@ -1,4 +1,6 @@
 const constants = {
+	PAGINATION_LIMIT: 10,
+	PAGINATION_PER_PAGE: [10, 50, 100],
 	AUTO_CLOSE_DURATION: 3000,
 	TOAST_MESSAGES: {
 		create: '생성에',
