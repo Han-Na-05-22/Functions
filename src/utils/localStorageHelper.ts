@@ -2,9 +2,9 @@ type localStorageHelperType = 'get' | 'set' | 'remove';
 
 // 로컬 스토리지 관련 함수
 export const localStorageHelper = (
-	value: string,
 	type: localStorageHelperType,
 	key: string,
+	value?: any,
 ) => {
 	if (type === 'get') {
 		const getData = window.localStorage.getItem(key);
