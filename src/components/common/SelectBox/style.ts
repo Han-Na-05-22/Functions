@@ -6,11 +6,28 @@ export const SelectBoxContainer = styled.div`
 	gap: 4px 0px;
 
 	.label-container {
-		font-size: 12px;
+		.label-text {
+			line-height: 20px;
+			color: ${({ theme }) => theme.colors.GrayscaleBorderColor50};
+		}
 	}
+
 	.select-input {
-		width: 200px;
-		height: 32px;
-		font-size: 12px;
+		.react-select__control {
+			border-radius: 8px;
+		}
+		.react-select__menu {
+			border-radius: 8px;
+			background-color: white;
+			overflow-y: auto;
+		}
+		.react-select__option {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	.check-icon {
+		margin-right: 4px;
 	}
 `;
