@@ -9,7 +9,7 @@ type initValueType =
 	| { [key: string]: any }
 	| any[];
 
-// input, radio button 관련 커스텀 훅
+// input, select box, radio button, checkbox 관련 커스텀 훅
 const useInputs = <T extends initValueType>(initValue: T) => {
 	const [inputValue, setInputValue] = useState<T>(initValue);
 
@@ -105,7 +105,7 @@ const useInputs = <T extends initValueType>(initValue: T) => {
 						({
 							...(prev as object),
 							[checkListName]: checkList.map((i: any) => {
-								if (name === i.label) {
+								if (name === i.name) {
 									return { ...i, checked };
 								}
 								return i;

@@ -20,6 +20,7 @@ const constants = {
 		login: '로그인에',
 		join: '회원가입에',
 	},
+	IMAGE_FALLBACK_URL: 'https://via.placeholder.com/600x400?text=No+Image',
 };
 
 export default constants;
